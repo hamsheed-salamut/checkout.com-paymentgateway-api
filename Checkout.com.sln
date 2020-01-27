@@ -3,9 +3,45 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1000
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bank Mockup", "Bank Mockup", "{EF7A0857-8B0A-486C-A9D3-645C8E70F83E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Core", "01 - Core", "{798FCDF2-3D53-4B15-834E-BFE58ED40CCD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Infrastructure", "02 - Infrastructure", "{9FC89532-4185-4243-B5ED-BE9E5C684E19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Service", "03 - Service", "{BAF776B6-5497-4D88-A321-D661C4AF98D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - WebApi", "04 - WebApi", "{42BB5C05-EA18-43D9-AC7F-5BEA47C92244}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.Domain", "Bank.Domain\Bank.Domain.csproj", "{F3F093BE-547A-455E-81BC-DB05CB131B1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.WebApi", "Bank.WebApi\Bank.WebApi.csproj", "{1D408A96-CC2B-4C3F-BC87-3A65C2A182FA}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3F093BE-547A-455E-81BC-DB05CB131B1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3F093BE-547A-455E-81BC-DB05CB131B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3F093BE-547A-455E-81BC-DB05CB131B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3F093BE-547A-455E-81BC-DB05CB131B1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D408A96-CC2B-4C3F-BC87-3A65C2A182FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D408A96-CC2B-4C3F-BC87-3A65C2A182FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D408A96-CC2B-4C3F-BC87-3A65C2A182FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D408A96-CC2B-4C3F-BC87-3A65C2A182FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{798FCDF2-3D53-4B15-834E-BFE58ED40CCD} = {EF7A0857-8B0A-486C-A9D3-645C8E70F83E}
+		{9FC89532-4185-4243-B5ED-BE9E5C684E19} = {EF7A0857-8B0A-486C-A9D3-645C8E70F83E}
+		{BAF776B6-5497-4D88-A321-D661C4AF98D3} = {EF7A0857-8B0A-486C-A9D3-645C8E70F83E}
+		{42BB5C05-EA18-43D9-AC7F-5BEA47C92244} = {EF7A0857-8B0A-486C-A9D3-645C8E70F83E}
+		{F3F093BE-547A-455E-81BC-DB05CB131B1F} = {798FCDF2-3D53-4B15-834E-BFE58ED40CCD}
+		{1D408A96-CC2B-4C3F-BC87-3A65C2A182FA} = {42BB5C05-EA18-43D9-AC7F-5BEA47C92244}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C2E11C6D-E2CB-42F1-BD07-9D358629B667}
