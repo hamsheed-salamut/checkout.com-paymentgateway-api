@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Bank.Domain\Bank.Domain.csproj" />
+    <ProjectReference Include="..\Bank.Infrastructure\Bank.Infrastructure.csproj" />
+    <ProjectReference Include="..\Bank.Interface\Bank.Interface.csproj" />
+  </ItemGroup>
+
 </Project>

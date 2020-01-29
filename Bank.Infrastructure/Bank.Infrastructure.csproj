@@ -4,4 +4,13 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bank.Domain\Bank.Domain.csproj" />
+    <ProjectReference Include="..\Bank.Interface\Bank.Interface.csproj" />
+  </ItemGroup>
+
 </Project>

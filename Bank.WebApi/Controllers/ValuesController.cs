@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Bank.Domain.Dtos;
+using Bank.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bank.WebApi.Controllers
@@ -10,10 +12,27 @@ namespace Bank.WebApi.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly ITransactionService _transactionSvc;
+
+        public ValuesController(ITransactionService transactionSvc)
+        {
+            _transactionSvc = transactionSvc;
+        }
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
+            var payment = new Payment()
+            {
+                AccountNumber = 1,
+                Amount = 25,
+                CardNumber = 9854753651,
+                Cvv = 321,
+                ExpiryDate = DateTime.Now.AddDays(5)
+            };
+
+            _transactionSvc.Debit(payment);
+
             return new string[] { "value1", "value2" };
         }
 
