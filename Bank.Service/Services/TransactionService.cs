@@ -32,7 +32,7 @@ namespace Bank.Service.Services
                         var newBalance = account.Balance - payment.Amount;
                         account.Balance = newBalance;
 
-                        _repository.Insert(account);
+                        _repository.Update(account);
                         _repository.Save();
 
                         response.IsSuccess = true;
@@ -64,7 +64,7 @@ namespace Bank.Service.Services
                 {
                     account.Balance = account.Balance + payment.Amount;
 
-                    _repository.Insert(account);
+                    _repository.Update(account);
                     _repository.Save();
 
                     response.IsSuccess = true;
