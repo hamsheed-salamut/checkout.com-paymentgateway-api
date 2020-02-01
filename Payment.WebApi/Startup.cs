@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -24,6 +25,7 @@ using Payment.Interface.Interfaces;
 using Payment.Security.Helpers;
 using Payment.Service.Interfaces;
 using Payment.Service.Services;
+using Payment.WebApi.Validators;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Payment.WebApi
@@ -80,6 +82,7 @@ namespace Payment.WebApi
             services.AddTransient<ICardService, CardService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<Common.Logger.ILogger, Common.Logger.Logger>();
+            services.AddTransient<IValidator<User>, UserValidator>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

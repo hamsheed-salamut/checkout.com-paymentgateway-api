@@ -64,15 +64,9 @@ namespace Payment.WebApi.Controllers
 
             var response = _client.Execute<Payments>(request);
 
-            return Ok();
-        }
+            // if response true, insert into transaction table & return a response to indicate success..
 
-        [AllowAnonymous]
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
-        {
-            _logger.Info("Information is logged...");
-            return new string[] { "value1", "value2" };
+            return Ok();
         }
     }
 }

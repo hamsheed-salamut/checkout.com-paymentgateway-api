@@ -57,6 +57,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payment.WebApi", "Payment.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payment.Test", "Payment.Test\Payment.Test.csproj", "{D57E690E-7591-44E1-8183-30914ACE3FAC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web Mvc", "Web Mvc", "{71C0F943-0EF2-4F8A-A7BE-59B28C7D8438}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payment.Infrastructure.Elasticsearch", "Payment.Infrastructure.Elasticsearch\Payment.Infrastructure.Elasticsearch.csproj", "{DD1B0FED-4DAC-4139-8AFE-FB5168A7EA8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -119,6 +123,10 @@ Global
 		{D57E690E-7591-44E1-8183-30914ACE3FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D57E690E-7591-44E1-8183-30914ACE3FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D57E690E-7591-44E1-8183-30914ACE3FAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD1B0FED-4DAC-4139-8AFE-FB5168A7EA8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD1B0FED-4DAC-4139-8AFE-FB5168A7EA8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD1B0FED-4DAC-4139-8AFE-FB5168A7EA8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD1B0FED-4DAC-4139-8AFE-FB5168A7EA8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -148,6 +156,8 @@ Global
 		{E52D1DE4-C0DE-47B7-B9CC-D527C0AE0584} = {B56F743D-C350-456F-A898-F028A4449F5B}
 		{3CC1F41A-41D2-42DA-B1DD-6518C98B1E61} = {7278C7C5-FD31-4AA4-B157-EB5F4A61484F}
 		{D57E690E-7591-44E1-8183-30914ACE3FAC} = {8C63B3B2-3840-493D-B70E-71058F05BC3D}
+		{71C0F943-0EF2-4F8A-A7BE-59B28C7D8438} = {6D8FE777-19FC-4E9F-87CC-69BD6557439C}
+		{DD1B0FED-4DAC-4139-8AFE-FB5168A7EA8B} = {2ADF2DFA-1DB2-4B4E-AD95-E3B68B0B4680}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C2E11C6D-E2CB-42F1-BD07-9D358629B667}
