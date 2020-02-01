@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using NLog;
 using Payment.Domain.Entities;
 using Payment.Infrastructure.Context;
 using Payment.Infrastructure.Repositories;
@@ -21,6 +24,7 @@ using Payment.Interface.Interfaces;
 using Payment.Security.Helpers;
 using Payment.Service.Interfaces;
 using Payment.Service.Services;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Payment.WebApi
 {
@@ -28,6 +32,7 @@ namespace Payment.WebApi
     {
         public Startup(IConfiguration configuration)
         {
+            LogManager.LoadConfiguration(System.String.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
             Configuration = configuration;
         }
 
@@ -65,9 +70,16 @@ namespace Payment.WebApi
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
 
-            services.AddTransient<IRepository<User>, Repository<User>>();
-            services.AddTransient<IUserService, UserService>();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Payment API", Version = "V1" });
+            });
 
+            services.AddTransient<IRepository<User>, Repository<User>>();
+            services.AddTransient<IRepository<Card>, Repository<Card>>();
+            services.AddTransient<ICardService, CardService>();
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<Common.Logger.ILogger, Common.Logger.Logger>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -80,6 +92,9 @@ namespace Payment.WebApi
                 .AllowAnyHeader());
 
             app.UseAuthentication();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "post API v1"); });
 
             if (env.IsDevelopment())
             {

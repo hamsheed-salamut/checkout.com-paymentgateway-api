@@ -14,6 +14,7 @@ namespace Payment.Test
     public class PaymentTestController
     {
         private readonly UserService _userService;
+        private readonly CardService _cardService;
         public static DbContextOptions<PaymentContext> _dbContextOptions { get; }
         public static string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=PaymentDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
@@ -26,12 +27,13 @@ namespace Payment.Test
         {
             var context = new PaymentContext(_dbContextOptions);
             _userService = new UserService(context);
+            _cardService = new CardService(context);
         }
 
         [Fact]
         public void User_Authenticate_OkResult()
         {
-            var controller = new PaymentController(_userService);
+            var controller = new PaymentController(_userService, _cardService);
             var user = new User()
             {
                 Email = "hamsheed@gmail.com",

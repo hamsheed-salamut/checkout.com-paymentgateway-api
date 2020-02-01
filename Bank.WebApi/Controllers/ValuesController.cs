@@ -31,7 +31,7 @@ namespace Bank.WebApi.Controllers
                 ExpiryDate = DateTime.Now.AddDays(5)
             };
 
-            _transactionSvc.Debit(payment);
+           // _transactionSvc.Debit(payment);
 
             return new string[] { "value1", "value2" };
         }

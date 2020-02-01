@@ -18,16 +18,17 @@ namespace Payment.Service.Services
         private readonly IRepository<User> _repository;
         private readonly AppSettings _appSettings;
         private PaymentContext context;
+        private Common.Logger.ILogger _logger;
+        //public UserService(PaymentContext context)
+        //{
+        //    this.context = context;
+        //}
 
-        public UserService(PaymentContext context)
-        {
-            this.context = context;
-        }
-
-        public UserService(IRepository<User> repository, IOptions<AppSettings> appSettings)
+        public UserService(IRepository<User> repository, IOptions<AppSettings> appSettings, Common.Logger.ILogger logger)
         {
             _repository = repository;
             _appSettings = appSettings.Value;
+            _logger = logger;
         }
 
         public User Authenticate(string email, string password)
@@ -62,7 +63,7 @@ namespace Payment.Service.Services
             }
             catch (Exception ex)
             {
-
+                _logger.Info(this.GetType().Name + ex.Message);
             }
             return user;
         }
