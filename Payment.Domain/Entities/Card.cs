@@ -6,15 +6,15 @@ using System.Text;
 
 namespace Payment.Domain.Entities
 {
-    public class User
+    public class Card
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string Token { get; set; }
+        public long CardNumber { get; set; }
+        public int Cvv { get; set; }
+        public long AccountNumber { get; set; }
+        public DateTime ExpiryDate { get; set; }
+        public int UserId { get; set; }
     }
 }
