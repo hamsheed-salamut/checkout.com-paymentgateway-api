@@ -18,7 +18,7 @@
 
 ***
 ## Introduction ##
-This an ASP.NET Core Application that allows a merchant to process a payment through a secure payment gateway. The payment gateway communicates with an issuing bank (simulator) to perform payment transactions.
+This is an ASP.NET Core Application that allows a merchant to process a payment through a secure payment gateway. The payment gateway communicates with an issuing bank (simulator) to perform payment transactions.
 required. 
 
 ## Application Architecture ##
