@@ -52,7 +52,8 @@ issues a valid token after validating the user credentials. The API Gateway send
 - Entity Framework Core (For Data Access)
 - Swash Buckle (For API Documentation)
 - xUnit (For Unit Testing)
-- Fluent Validations in ASP.NET Core Web API
+- Fluent Validations in ASP.NET Core Web API (For API validations)
+- NLogging (For Application Logging)
 
 ## Web Api Endpoints ## 
 
