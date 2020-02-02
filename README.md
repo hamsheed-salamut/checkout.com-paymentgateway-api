@@ -1,5 +1,5 @@
 # Checkout.com - Payment Gateway API
-### Bank-Payment-Merchant ASP.Net Core 2.2  With C#.Net, EF and SQL Server ###
+### Bank-Payment-Merchant ASP.Net Core 2.2  With C#.Net, EF Core and SQL Server ###
 
 - Introduction 
 - Application Architecture 
@@ -50,9 +50,9 @@ In the `appsettings.json` file, the secret key has been defined as follows:
 ```
 
 ## Development Environment ##
-- Visual Studio 2019
-- .NET Core 2.2
-- SQL Server Management Studio 2019
+- [Visual Studio 2019](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16)
+- [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+- [SQL Server Management Studio 2019](https://www.microsoft.com/en-us/sql-server/sql-server-2019)
 
 ## Technologies ##
 - C# NET
@@ -65,7 +65,7 @@ In the `appsettings.json` file, the secret key has been defined as follows:
 - Fluent Validations in ASP.NET Core Web API (For API validations)
 - NLogging (For Application Logging)
 - ASP.NET Core Dependency Injection
-- Moq Unit Test ( For configuring test-time-only mock versions of dependencies)
+- Moq Unit Test (For configuring test-time-only mock versions of dependencies)
 
 ## Web Api Endpoints ## 
 
