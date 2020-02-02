@@ -146,7 +146,7 @@ services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddF
   - Payment.WebApi
   - Merchant.UI by setting multiple startups projects in the solution's properties
   
-  - Sample data to test
+- Sample data to test
   
 | Email | Password | User Type |
 | :---         |     :---:      |          ---: |
