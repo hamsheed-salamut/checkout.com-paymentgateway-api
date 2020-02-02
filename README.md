@@ -13,6 +13,7 @@
 - Swagger: API Documentation
 - How to run the Application
 - Demo: Merchant Portal & Gateway Client
+- Unit Testing in ASP.NET Core
 
 ***
 ## Introduction ##
@@ -31,13 +32,22 @@ The diagram illustrates the flow of the application as follows:
 
 - Onion Architecture
 
-![checkout_2](https://user-images.githubusercontent.com/23207774/73608937-16765280-45e2-11ea-8053-8e904bddbff2.png)
+![checkout_1](https://user-images.githubusercontent.com/23207774/73610739-28f98780-45f4-11ea-8c34-d05ebccfa9a4.png)
 
 ## Security: JWT Token Based Authentication ##
 JWT Token based authentication is implementated to secure the WebApi for the Payment Gateway. When the user logins to the payment gateway, the gateway 
 issues a valid token after validating the user credentials. The API Gateway sends the token to the client. The client app uses the token for the subsequent request.
 
 ![checkout_3](https://user-images.githubusercontent.com/23207774/73609073-79b4b480-45e3-11ea-92b1-68c538478d58.png)
+
+In the `appsettings.json` file, the secret key has been defined as follows: 
+
+```
+{
+  "AppSettings": {
+    "Secret": "Checkout.com helps your business to offer more payment methods and currencies"
+  },
+```
 
 ## Development Environment ##
 - Visual Studio 2019
@@ -55,6 +65,7 @@ issues a valid token after validating the user credentials. The API Gateway send
 - Fluent Validations in ASP.NET Core Web API (For API validations)
 - NLogging (For Application Logging)
 - ASP.NET Core Dependency Injection
+- Moq Unit Test ( For configuring test-time-only mock versions of dependencies)
 
 ## Web Api Endpoints ## 
 
@@ -92,6 +103,37 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 
 ![checkout_5](https://user-images.githubusercontent.com/23207774/73609647-3bba8f00-45e9-11ea-8603-33f75c4edf8b.png)
 
+## Testing Fluent Validation ## 
+
+- **Configure Fluent Validation** 
+
+In the `startup.cs`, the following configurations are added:
+
+```
+services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddFluentValidation();
+
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.InvalidModelStateResponseFactory = (context) =>
+                {
+                    var errors = context.ModelState.Values.SelectMany(x => x.Errors.Select(e => e.ErrorMessage)).ToList();
+
+                    var result = new
+                    {
+                        Code = "00009",
+                        Message = "Validation Errors",
+                        Errors = errors
+                    };
+
+                    return new BadRequestObjectResult(result);
+                };
+            });
+        }
+```
+
+- **Testing the custom validator with Postman**
+
+![checkout_11](https://user-images.githubusercontent.com/23207774/73610708-e5068280-45f3-11ea-90f1-1ee27a066815.png)
 
 ## How to run the Application ##
 
@@ -124,3 +166,50 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 - **Payment Successful**
 ![checkout_9](https://user-images.githubusercontent.com/23207774/73609955-fe0b3580-45eb-11ea-907b-81fd4b5673d3.png)
 
+## Unit Testing in ASP.NET Core ##
+
+- **xUnit Project: Payment.Test**
+
+Configure the `PaymentTestController` to mock the dependencies of the `PaymentController` in the Payment.WebApi to carry out the unit testing. 
+
+Example:
+```
+public class PaymentTestController
+    {
+        private readonly Mock<IUserService> _userService;
+        private readonly Mock<ICardService> _cardService;
+        private readonly Mock<ITransactService> _transactService;
+        private Mock<Common.Logger.ILogger> _logger;
+     
+        public PaymentTestController()
+        {
+            _userService = new Mock<IUserService>();
+            _cardService = new Mock<ICardService>();
+            _transactService = new Mock<ITransactService>();
+            _logger = new Mock<Common.Logger.ILogger>();
+
+        }
+
+        [Fact]
+        public void User_Pay_OkObjectResult()
+        {
+            var controller = new PaymentController(_userService.Object, _cardService.Object,  _transactService.Object,  _logger.Object);
+            var pay = new Payments()
+            {
+                AccountNumber = 2,
+                Amount = 100,
+                CardNumber = 4261392791756353,
+                Cvv = 812,
+                ExpiryDate = DateTime.Now.AddDays(5),
+                Token = "token",
+                MerchantAccountNumber = 3
+            };
+
+            var data = controller.Post(pay);
+
+            Assert.IsType<OkObjectResult>(data);
+        }
+```
+
+- **Unit Tests Execution in Text Explorer**
+![checkout_10](https://user-images.githubusercontent.com/23207774/73610608-b3d98280-45f2-11ea-8493-fb9e83fb2b20.png)
