@@ -54,6 +54,7 @@ issues a valid token after validating the user credentials. The API Gateway send
 - xUnit (For Unit Testing)
 - Fluent Validations in ASP.NET Core Web API (For API validations)
 - NLogging (For Application Logging)
+- ASP.NET Core Dependency Injection
 
 ## Web Api Endpoints ## 
 
