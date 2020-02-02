@@ -3,17 +3,17 @@
 
 - [Introduction](#introduction)
 - [Application Architecture](#application-architecture) 
-- Design of Application
-- Security - JWT Token Based Authentication
+- [Design of Application](#design-of-application)
+- [Security - JWT Token Based Authentication](#security-jwt-token-based-authentication)
 - [Development Environment](#development-environment)
 - [Technologies](#technologies)
 - [Tools](#tools)
 - [Web Api Endpoints](#web-api-endpoints)
-- [Solution Structure](#solution-architecture)
-- [Swagger: API Documentation](#swagger:-api-documentation)
-- How to run the Application
-- Demo: Merchant Portal & Gateway Client
-- Unit Testing in ASP.NET Core
+- [Solution Structure](#solution-structure)
+- [Swagger - API Documentation](#swagger-api-documentation)
+- [How to run the Application](#how-to-run-the-application)
+- [Demo - Merchant Portal and Gateway Client](#demo-merchant-portal-and-gateway-client)
+- [Unit Testing in ASP.NET Core](#unit-testing-in-aspnet-core)
 
 ***
 ## Introduction ##
@@ -152,7 +152,7 @@ services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddF
 | :---         |     :---:      |          ---: |
 | hamsheed@gmail.com   | test     | shopper    |
 
-## Demo: Merchant Portal & Gateway Client ##
+## Demo: Merchant Portal and Gateway Client ##
 
 - **Merchant Portal**
 ![checkout_6](https://user-images.githubusercontent.com/23207774/73609878-3d855200-45eb-11ea-8b92-6297267810f4.png)
