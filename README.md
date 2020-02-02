@@ -52,7 +52,7 @@ In the `appsettings.json` file, the secret key has been defined as follows:
 
 ## Development Environment ##
 - [Visual Studio 2019](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16)
-- [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+- [.NET Core 2.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2)
 - [SQL Server Management Studio 2019](https://www.microsoft.com/en-us/sql-server/sql-server-2019)
 
 ## Technologies ##
