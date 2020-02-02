@@ -37,9 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Payment.Common", "Payment.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Payment.Interface", "Payment.Interface\Payment.Interface.csproj", "{069BBA25-D701-4FD5-9486-6F71A15DBABD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Infrastructure", "02 - Infrastructure", "{2ADF2DFA-1DB2-4B4E-AD95-E3B68B0B4680}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Infrastructure", "03 - Infrastructure", "{2ADF2DFA-1DB2-4B4E-AD95-E3B68B0B4680}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Service", "03 - Service", "{590651EE-48C6-4C1F-958F-30A13FEA5461}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Service", "02 - Service", "{590651EE-48C6-4C1F-958F-30A13FEA5461}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Security", "04 - Security", "{B56F743D-C350-456F-A898-F028A4449F5B}"
 EndProject
