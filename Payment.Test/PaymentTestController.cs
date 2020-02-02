@@ -24,7 +24,6 @@ namespace Payment.Test
      
         public PaymentTestController()
         {
-            //var context = new PaymentContext(_dbContextOptions);
             _userService = new Mock<IUserService>();
             _cardService = new Mock<ICardService>();
             _transactService = new Mock<ITransactService>();

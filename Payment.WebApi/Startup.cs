@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -85,7 +86,24 @@ namespace Payment.WebApi
             services.AddTransient<Common.Logger.ILogger, Common.Logger.Logger>();
             services.AddTransient<ITransactService, TransactService>();
             services.AddTransient<IValidator<User>, UserValidator>();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddFluentValidation();
+
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.InvalidModelStateResponseFactory = (context) =>
+                {
+                    var errors = context.ModelState.Values.SelectMany(x => x.Errors.Select(e => e.ErrorMessage)).ToList();
+
+                    var result = new
+                    {
+                        Code = "00009",
+                        Message = "Validation Errors",
+                        Errors = errors
+                    };
+
+                    return new BadRequestObjectResult(result);
+                };
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
