@@ -70,11 +70,11 @@ In the `appsettings.json` file, the secret key has been defined as follows:
 ## Web Api Endpoints ## 
 
 ### End points configured and accessible through Issuing Bank (Bank Simulator) API ### 
-1. Uri: "**api/bank**" [HttPost] - To perform debit and credit transactions
+1. Uri: "**api/bank**" `[HttpPost]` - To perform debit and credit transactions
 
 ### End points configured and accessible through Payment Gateway API ###
-1. Uri: "**api/payment/authenticate**" `[HttPost]` - To authenticate user and issue a valid token
-2. Uri: "**api/payment**" `[HttPost]` - To process payment through gateway 
+1. Uri: "**api/payment/authenticate**" `[HttpPost]` - To authenticate user and issue a valid token
+2. Uri: "**api/payment**" `[HttpPost]` - To process payment through gateway 
 3. Uri: "**api/payment**" `[HttpGet("{id}")]` - To retrieve all transactions by passing a merchant unique identifier as parameter
 
 ## Solution Structure ## 
