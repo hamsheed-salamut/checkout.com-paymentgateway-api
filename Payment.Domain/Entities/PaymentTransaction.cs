@@ -15,7 +15,7 @@ namespace Payment.Domain.Entities
         public long AccountNumber { get; set; }
         public DateTime TransactionDate { get; set; }
         public double Amount { get; set; }
-        public long CardNumber { get; set; }
+        public string CardNumber { get; set; }
         public string Status { get; set; }
     }
 }

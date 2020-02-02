@@ -27,7 +27,7 @@ namespace Bank.Service.Services
 
                 if (account != null)
                 {
-                    if ((account.Balance > payment.Amount) && (account.ExpiryDate >= payment.ExpiryDate))
+                    if ((account.Balance > payment.Amount) && (account.ExpiryDate >= DateTime.Now))
                     {
                         var newBalance = account.Balance - payment.Amount;
                         account.Balance = newBalance;

@@ -33,11 +33,35 @@ namespace Payment.Infrastructure.Migrations
 
                     b.Property<DateTime>("ExpiryDate");
 
+                    b.Property<string>("Token");
+
                     b.Property<int>("UserId");
 
                     b.HasKey("Id");
 
                     b.ToTable("Cards");
+                });
+
+            modelBuilder.Entity("Payment.Domain.Entities.PaymentTransaction", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<long>("AccountNumber");
+
+                    b.Property<double>("Amount");
+
+                    b.Property<string>("CardNumber");
+
+                    b.Property<int>("MerchantId");
+
+                    b.Property<string>("Status");
+
+                    b.Property<DateTime>("TransactionDate");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PaymentTransactions");
                 });
 
             modelBuilder.Entity("Payment.Domain.Entities.User", b =>

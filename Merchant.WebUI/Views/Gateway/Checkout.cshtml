@@ -1,0 +1,66 @@
+﻿@model  Merchant.WebUI.ViewModels.UserViewModel
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<h2>Checkout</h2>
+
+<div class="container">
+    <div class="row">
+        @using (Html.BeginForm("Pay", "Gateway", FormMethod.Post))
+        {
+            <div class="col-xs-12 col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            Payment Details
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+
+                        @Html.AntiForgeryToken()
+
+                        <form role="form">
+
+                            <div class="form-group">
+                                <label for="cardNumber">
+                                    CARD NUMBER
+                                </label>
+                                <div class="input-group">
+                                    @Html.EditorFor(model => model.CardNumber, new { @class = "form-control readonly" })
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-7 col-md-7">
+                                    <div class="form-group">
+                                        <label for="expityMonth">
+                                            EXPIRY DATE
+                                        </label>
+                                        @Html.EditorFor(model => model.ExpiryDate, new { @class = "form-control readonly" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-7 col-md-7">
+                                    <div class="form-group">
+                                        <label for="expityMonth">
+                                           CVV
+                                        </label>
+                                        @Html.EditorFor(model => model.Cvv, new { @class = "form-control readonly" })
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active">
+                        <a href="#"><span class="badge pull-right">  @Html.EditorFor(model => model.Amount, new { @class = "form-control readonly" })</span> Final Payment</a>
+                    </li>
+                </ul>
+                <br />
+                <button class="btn btn-success btn-lg btn-block">Confirm & Pay</button>
+            </div>
+        }
+    </div>
+</div>

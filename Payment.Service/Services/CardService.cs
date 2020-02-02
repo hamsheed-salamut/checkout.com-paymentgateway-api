@@ -27,7 +27,7 @@ namespace Payment.Service.Services
             }
             catch(Exception ex)
             {
-                _logger.Info(this.GetType().Name + ex.Message);
+                _logger.Error(this.GetType().Name + ex.Message);
             }
             return card;
         }

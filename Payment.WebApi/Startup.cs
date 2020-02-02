@@ -79,9 +79,11 @@ namespace Payment.WebApi
 
             services.AddTransient<IRepository<User>, Repository<User>>();
             services.AddTransient<IRepository<Card>, Repository<Card>>();
+            services.AddTransient<IRepository<PaymentTransaction>, Repository<PaymentTransaction>>();
             services.AddTransient<ICardService, CardService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<Common.Logger.ILogger, Common.Logger.Logger>();
+            services.AddTransient<ITransactService, TransactService>();
             services.AddTransient<IValidator<User>, UserValidator>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

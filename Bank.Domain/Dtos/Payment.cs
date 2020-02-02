@@ -11,5 +11,6 @@ namespace Bank.Domain.Dtos
         public double Amount { get; set; }
         public DateTime ExpiryDate { get; set; }
         public long AccountNumber { get; set; }
+
     }
 }

@@ -13,5 +13,7 @@ namespace Payment.WebApi.Models
         public double Amount { get; set; }
         public int AccountNumber { get; set; }
         public string Token { get; set; }
+
+        public long MerchantAccountNumber { get; set; }
     }
 }

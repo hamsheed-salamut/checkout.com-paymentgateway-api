@@ -15,5 +15,6 @@ namespace Payment.Infrastructure.Context
 
         public DbSet<Card> Cards { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<PaymentTransaction> PaymentTransactions { get; set; }
     }
 }
