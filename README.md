@@ -137,8 +137,8 @@ services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddF
 
 ## How to run the Application ##
 
-1. Download the Sql script from the repo
-2. Run the scirpt against SQL server to create the necessary tables and sample data
+1. Download the BAK SQL files from the repo.
+2. Restore the BAK files against SQL server to create the necessary tables and sample data
 3. Open the solution (.sln) in Visual Studio 2017 or later version
 4. Configure the SQL connection string in `Bank.WebApi -> appsettings.json` and `Payment.WebApi -> appsettings.json`
 5. Run the following projects in the solution:
@@ -146,7 +146,7 @@ services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddF
   - Payment.WebApi
   - Merchant.UI by setting multiple startups projects in the solution's properties
   
-  - Sample data to test
+- Sample data to test
   
 | Email | Password | User Type |
 | :---         |     :---:      |          ---: |
