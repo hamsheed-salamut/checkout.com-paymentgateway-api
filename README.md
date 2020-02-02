@@ -52,6 +52,7 @@ issues a valid token after validating the user credentials. The API Gateway send
 - Entity Framework Core (For Data Access)
 - Swash Buckle (For API Documentation)
 - xUnit (For Unit Testing)
+- Fluent Validations in ASP.NET Core Web API
 
 ## Web Api Endpoints ## 
 
@@ -87,5 +88,37 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 }
 ```
 
+![checkout_5](https://user-images.githubusercontent.com/23207774/73609647-3bba8f00-45e9-11ea-8603-33f75c4edf8b.png)
 
+
+## How to run the Application ##
+
+1. Download the Sql script from the repo
+2. Run the scirpt against SQL server to create the necessary tables and sample data
+3. Open the solution (.sln) in Visual Studio 2017 or later version
+4. Configure the SQL connection string in `Bank.WebApi -> appsettings.json` and `Payment.WebApi -> appsettings.json`
+5. Run the following projects in the solution:
+  - Bank.WebApi
+  - Payment.WebApi
+  - Merchant.UI by setting multiple startups projects in the solution's properties
+  
+  - Sample data to test
+  
+| Email | Password | User Type |
+| :---         |     :---:      |          ---: |
+| hamsheed@gmail.com   | test     | shopper    |
+
+## Demo: Merchant Portal & Gateway Client ##
+
+- **Merchant Portal**
+![checkout_6](https://user-images.githubusercontent.com/23207774/73609878-3d855200-45eb-11ea-8b92-6297267810f4.png)
+
+- **Payment Gateway Authentication** 
+![checkout_7](https://user-images.githubusercontent.com/23207774/73609900-702f4a80-45eb-11ea-89c1-b34353f8441d.png)
+
+- **Payment Gateway Payment Confirmation**
+![checkout_8](https://user-images.githubusercontent.com/23207774/73609925-c43a2f00-45eb-11ea-8f64-a2b5a35e6ec3.png)
+
+- **Payment Successful**
+![checkout_9](https://user-images.githubusercontent.com/23207774/73609955-fe0b3580-45eb-11ea-907b-81fd4b5673d3.png)
 
