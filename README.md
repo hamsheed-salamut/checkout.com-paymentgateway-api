@@ -26,7 +26,7 @@ The diagram illustrates the flow of the application as follows:
 - **Online Store**: The online store contacts the payment gateway, which in turn requests the client to authenticate himself with his credentials. 
 - **Payment Gateway**: Once the authentication is completed, the payment gateway requires the client to confirm and pay for the order
 - **Issuing Bank**: The payment gateway confirms the transaction through an issuing bank, which in turns credit the merchant’s account and debit the client’s account
-![checkout_1](https://user-images.githubusercontent.com/23207774/73608319-07d86d00-45db-11ea-9be8-78a263df8e82.png)
+![checkout_1](https://user-images.githubusercontent.com/23207774/73611295-f488ca00-45f9-11ea-8fdc-10f608dc1e8a.png)
 
 ## Design of Application ##
 
