@@ -5,11 +5,11 @@
 - [Application Architecture](#application-architecture) 
 - Design of Application
 - Security - JWT Token Based Authentication
-- Development Environment
-- Technologies
-- Tools
-- Web Api Endpoints
-- Solution Structure
+- [Development Environment](#development-environment)
+- [Technologies](#technologies)
+- [Tools](#tools)
+- [Web Api Endpoints](#web-api-endpoints)
+- [Solution Structure](#solution-architecture)
 - [Swagger: API Documentation](#swagger:-api-documentation)
 - How to run the Application
 - Demo: Merchant Portal & Gateway Client
