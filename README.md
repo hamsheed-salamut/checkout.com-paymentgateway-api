@@ -1,5 +1,5 @@
 # Checkout.com - Payment Gateway API
-### Bank-Payment-Merchant ASP.Net Core 2.2  With C#.Net, EF Core and SQL Server ###
+### Bank-Payment-Merchant ASP.Net Core 2.1  With C#.Net, EF Core and SQL Server ###
 
 - [Introduction](#introduction)
 - [Application Architecture](#application-architecture) 
@@ -57,7 +57,7 @@ In the `appsettings.json` file, the secret key has been defined as follows:
 
 ## Technologies ##
 - C# NET
-- ASP.NET Core Web API 
+- ASP.NET Core 2.1 Web API 
 
 ## Tools ## 
 - Entity Framework Core (For Data Access)
