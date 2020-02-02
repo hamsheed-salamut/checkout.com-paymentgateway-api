@@ -11,6 +11,7 @@
 - [Web Api Endpoints](#web-api-endpoints)
 - [Solution Structure](#solution-structure)
 - [Swagger - API Documentation](#swagger-api-documentation)
+- [Application Logging - NLogging](#application-logging-nlogging)
 - [How to run the Application](#how-to-run-the-application)
 - [Demo - Merchant Portal and Gateway Client](#demo-merchant-portal-and-gateway-client)
 - [Unit Testing in ASP.NET Core](#unit-testing-in-aspnet-core)
@@ -134,6 +135,15 @@ services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddF
 - **Testing the custom validator with Postman**
 
 ![checkout_11](https://user-images.githubusercontent.com/23207774/73610708-e5068280-45f3-11ea-90f1-1ee27a066815.png)
+
+## Application Logging: NLogging ##
+The NLogging Nuget package has been added to the Payment Gateway project for monitoring. The logs are stored in the `C:\Users\Public\checkout\` folder.
+
+```
+  <targets>
+    <target name="logfile" xsi:type="File" fileName="C:/Users/Public/checkout/LOG/${shortdate}_log.txt" layout="${longdate} ${level:uppercase=true} ${message}"/>
+  </targets>
+```
 
 ## How to run the Application ##
 
