@@ -18,8 +18,7 @@
 
 ***
 ## Introduction ##
-This is an ASP.NET Core Application that allows a merchant to process a payment through a secure payment gateway. The payment gateway communicates with an issuing bank (simulator) to perform payment transactions.
-required. 
+This is an ASP.NET Core Application that allows a merchant to process a payment through a secure payment gateway. The payment gateway communicates with an issuing bank (simulator) to perform payment transactions requested by the client. 
 
 ## Application Architecture ##
 The diagram illustrates the flow of the application as follows:
@@ -67,6 +66,7 @@ In the `appsettings.json` file, the secret key has been defined as follows:
 - NLogging (For Application Logging)
 - ASP.NET Core Dependency Injection
 - Moq Unit Test (For configuring test-time-only mock versions of dependencies)
+- RestSharp Library (For consuming REST APIs)
 
 ## Web Api Endpoints ## 
 
