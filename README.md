@@ -32,7 +32,7 @@ The diagram illustrates the flow of the application as follows:
 
 - Onion Architecture
 
-![checkout_2](https://user-images.githubusercontent.com/23207774/73608937-16765280-45e2-11ea-8053-8e904bddbff2.png)
+![onion_arch](https://user-images.githubusercontent.com/23207774/74105164-c9abf200-4b74-11ea-953e-80deb9a09457.png)
 
 ## Security: JWT Token Based Authentication ##
 JWT Token based authentication is implementated to secure the WebApi for the Payment Gateway. When the user logins to the payment gateway, the gateway 
